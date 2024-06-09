@@ -1,0 +1,47 @@
+﻿<Window x:Class="Desktopowa.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Desktopowa"
+        mc:Ignorable="d"
+        Title="Wprowadzenie danych do paszportu. Wykonał: 12345" Height="450" Width="800" Background="CadetBlue">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Numer" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox Name="NumerTextBox" Grid.Row="0" Grid.Column="1" Background="Azure" LostFocus="NumerTextBox_LostFocus"/>
+
+        <Label Content="Imię" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox Name="ImieTextBox" Grid.Row="1" Grid.Column="1" Background="Azure"/>
+
+        <Label Content="Nazwisko" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox Name="NazwiskoTextBox" Grid.Row="2" Grid.Column="1" Background="Azure"/>
+
+        <GroupBox Header="Kolor oczu" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+            <StackPanel>
+                <RadioButton Name="NiebieskieRadioButton" Content="niebieskie" IsChecked="True"/>
+                <RadioButton Name="ZieloneRadioButton" Content="zielone"/>
+                <RadioButton Name="PiwneRadioButton" Content="piwne"/>
+            </StackPanel>
+        </GroupBox>
+
+        <Button Content="OK" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" Click="Button_Click" Background="Azure" Height="40"/>
+
+        <Image Source="000-zdjecie.jpg" Name="ZdjecieImage" Grid.Row="0" Grid.RowSpan="5" Grid.Column="2" Height="180" Width="180" Margin="10"/>
+        <Image Source="000-odcisk.jpg" Name="OdciskImage" Grid.Row="0" Grid.RowSpan="5" Grid.Column="3" Height="180" Width="180" Margin="10"/>
+    </Grid>
+</Window>
